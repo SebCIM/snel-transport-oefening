@@ -10,29 +10,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 //our root app component
 var core_1 = require('@angular/core');
-var FilterPipe = (function () {
-    function FilterPipe() {
+var CapitalizePipe = (function () {
+    function CapitalizePipe() {
     }
-    FilterPipe.prototype.transform = function (value, args) {
-        if (!args[0])
+    CapitalizePipe.prototype.transform = function (value, args) {
+        if (!value)
             return value;
-        return value.filter(function (item) { return item.indexOf(args[0]) > -1; });
+        return value.replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
     };
-    FilterPipe = __decorate([
-        core_1.Pipe({ name: 'filter' }), 
+    CapitalizePipe = __decorate([
+        core_1.Pipe({ name: 'capitalize' }), 
         __metadata('design:paramtypes', [])
-    ], FilterPipe);
-    return FilterPipe;
+    ], CapitalizePipe);
+    return CapitalizePipe;
 }());
-exports.FilterPipe = FilterPipe;
+exports.CapitalizePipe = CapitalizePipe;
 var FiltersComponent = (function () {
     function FiltersComponent() {
-        this.products = ["Apple", "Banana", "Orange"];
+        this.name = 'john doe';
     }
     FiltersComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Angular 2 Systemjs start</h1>\n   <table>\n   <input type=\"text\" [(ngModel)]=\"filterText\">\n    <tr>\n        <td *ngFor=\"let product of products | filter: filterText\">\n            {{product}}\n        </td>\n    </tr>\n    </table>\n  "
+            template: '<p>My name is <strong>{{ name | capitalize }}</strong>.</p>',
         }), 
         __metadata('design:paramtypes', [])
     ], FiltersComponent);

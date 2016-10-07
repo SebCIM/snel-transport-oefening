@@ -44,7 +44,7 @@
           <td>{{productCode}}</td>
           <td>&#8734;</td>
           <td>{{productPrice | currency:'EUR':true:'1.2-2'}}</td>
-          <td><input #quantity id="product_amount" class="smallInput" type="number" min="1" step="1" value="1" #p (change)="getTotalPrice(p.value, productId)"
+          <td><input #quantity id="product_amount" class="smallInput" type="number" min="1" step="1" value="{{productQuantity}}" #p (change)="getTotalPrice(p.value, productId)"
             /></td>
           <td>{{totalPrice | currency:'EUR':true:'1.2-2'}}</td>
           <td><button (click)="addOrderLine(id.value,quantity.value)">Add</button></td>

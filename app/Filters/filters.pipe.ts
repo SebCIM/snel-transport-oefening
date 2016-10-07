@@ -1,5 +1,4 @@
-//our root app component
-import {Component, Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({name: 'capitalize'})
 export class CapitalizePipe implements PipeTransform {
@@ -11,14 +10,3 @@ export class CapitalizePipe implements PipeTransform {
     });
   }
 }
-
-@Component({
-  selector: 'my-app',
-  template: '<p>My name is <strong>{{ name | capitalize }}</strong>.</p>',
-})
-
-export class FiltersComponent {
-  name = 'john doe';
-}
-
-

@@ -22,6 +22,7 @@ var OrderCreateComponent = (function () {
         this.customerId = 0;
         // product variables
         this.productSelectId = 0;
+        this.productQuantity = 1;
         // total
         this.quantity = 1;
         this.totalPrice = 0;
@@ -44,6 +45,7 @@ var OrderCreateComponent = (function () {
                 var orderline = new orderLineCreate_1.orderLineCreate(id, this.productName, this.productCat, this.productCode, this.productPrice, quantity, this.orderLineTotal);
                 this.orderlines.push(orderline);
                 this.orderTotal = this.orderTotal + this.orderLineTotal;
+                this.getProductInfo();
             }
         }
     };
@@ -68,17 +70,28 @@ var OrderCreateComponent = (function () {
         // this.selectedOption = this.options.filter((item)=> item.id == optionid)[0];
     };
     OrderCreateComponent.prototype.getProductInfo = function (productId) {
-        this.productSelectId = parseInt(productId) - 1;
-        this.productCat = this.products[this.productSelectId].category;
-        this.productCode = this.products[this.productSelectId].code;
-        this.productPrice = this.products[this.productSelectId].price;
-        this.productStock = this.products[this.productSelectId].stock;
-        this.productId = parseInt(productId);
-        //this.selectedProducts[this.productSelectId].push(this.products[this.productSelectId].price);
-        this.totalPrice = this.products[this.productSelectId].price * this.quantity;
-        this.selectedProducts = [
-            { productId: this.productId, totalPrice: this.products[this.productSelectId].price },
-        ];
+        if (productId) {
+            this.productSelectId = parseInt(productId) - 1;
+            this.productCat = this.products[this.productSelectId].category;
+            this.productCode = this.products[this.productSelectId].code;
+            this.productPrice = this.products[this.productSelectId].price;
+            this.productStock = this.products[this.productSelectId].stock;
+            this.productId = parseInt(productId);
+            //this.selectedProducts[this.productSelectId].push(this.products[this.productSelectId].price);
+            this.totalPrice = this.products[this.productSelectId].price * this.quantity;
+            this.selectedProducts = [
+                { productId: this.productId, totalPrice: this.products[this.productSelectId].price },
+            ];
+        }
+        else {
+            this.productCat = null;
+            this.productCode = null;
+            this.productPrice = null;
+            this.productStock = null;
+            this.productId = null;
+            this.totalPrice = null;
+            this.productQuantity = 1;
+        }
     };
     OrderCreateComponent.prototype.getTotalPrice = function (quantity, productId) {
         this.quantity = parseInt(quantity);

@@ -17,6 +17,7 @@ var order_get_component_1 = require('./order/order-get.component');
 var order_create_component_1 = require('./order/order-create.component');
 var delivery_list_component_1 = require('./deliverylist/delivery-list.component');
 var contacts_component_1 = require('./contacts/contacts.component');
+// import { FiltersComponent }  from './filters/filters.component';
 var app_routes_1 = require('./app.routes');
 var AppModule = (function () {
     function AppModule() {
@@ -35,7 +36,7 @@ var AppModule = (function () {
                 order_get_component_1.OrderGetComponent,
                 order_create_component_1.OrderCreateComponent,
                 delivery_list_component_1.DeliveryListComponent,
-                contacts_component_1.ContactsComponent
+                contacts_component_1.ContactsComponent,
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

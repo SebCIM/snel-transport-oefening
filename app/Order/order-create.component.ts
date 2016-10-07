@@ -33,6 +33,7 @@ export class OrderCreateComponent implements OnInit {
   productCode: string;
   productPrice: number;
   productStock: string;
+  productQuantity = 1;
 
   // total
   quantity = 1;
@@ -51,7 +52,7 @@ export class OrderCreateComponent implements OnInit {
     if (!isNaN(id)) {
       this.indexOfOrderLine = this.getIndexByValue("Id", id);
 
-      if (!isNaN(this.indexOfOrderLine)){
+      if (!isNaN(this.indexOfOrderLine)) {
 
         alert("Nee sorry!");
         // var test = quantity.toString(quantity);
@@ -78,6 +79,8 @@ export class OrderCreateComponent implements OnInit {
         let orderline = new orderLineCreate(id, this.productName, this.productCat, this.productCode, this.productPrice, quantity, this.orderLineTotal);
         this.orderlines.push(orderline);
         this.orderTotal = this.orderTotal + this.orderLineTotal;
+
+        this.getProductInfo();
       }
     }
   }
@@ -107,18 +110,28 @@ export class OrderCreateComponent implements OnInit {
   }
 
   getProductInfo(productId) {
-    this.productSelectId = parseInt(productId) - 1;
-    this.productCat = this.products[this.productSelectId].category;
-    this.productCode = this.products[this.productSelectId].code;
-    this.productPrice = this.products[this.productSelectId].price;
-    this.productStock = this.products[this.productSelectId].stock;
-    this.productId = parseInt(productId);
+    if (productId) {
+      this.productSelectId = parseInt(productId) - 1;
+      this.productCat = this.products[this.productSelectId].category;
+      this.productCode = this.products[this.productSelectId].code;
+      this.productPrice = this.products[this.productSelectId].price;
+      this.productStock = this.products[this.productSelectId].stock;
+      this.productId = parseInt(productId);
 
-    //this.selectedProducts[this.productSelectId].push(this.products[this.productSelectId].price);
-    this.totalPrice = this.products[this.productSelectId].price * this.quantity;
-    this.selectedProducts = [
-      { productId: this.productId, totalPrice: this.products[this.productSelectId].price },
-    ];
+      //this.selectedProducts[this.productSelectId].push(this.products[this.productSelectId].price);
+      this.totalPrice = this.products[this.productSelectId].price * this.quantity;
+      this.selectedProducts = [
+        { productId: this.productId, totalPrice: this.products[this.productSelectId].price },
+      ];
+    }else{
+      this.productCat = null;
+      this.productCode = null;
+      this.productPrice = null;
+      this.productStock = null;
+      this.productId = null;
+      this.totalPrice = null;
+      this.productQuantity = 1;
+    }
   }
 
   getTotalPrice(quantity, productId) {

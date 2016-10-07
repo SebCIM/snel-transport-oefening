@@ -8,6 +8,7 @@ import { OrderGetComponent }  from './order/order-get.component';
 import { OrderCreateComponent }  from './order/order-create.component';
 import { DeliveryListComponent }  from './deliverylist/delivery-list.component';
 import { ContactsComponent }  from './contacts/contacts.component';
+// import { FiltersComponent }  from './filters/filters.component';
 import { routing } from './app.routes';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { routing } from './app.routes';
     OrderGetComponent,
     OrderCreateComponent,
     DeliveryListComponent,
-    ContactsComponent
+    ContactsComponent,
+    // FiltersComponent
   ],
   bootstrap: [ AppComponent ]
 })
