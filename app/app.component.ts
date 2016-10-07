@@ -1,34 +1,38 @@
-import { Component,OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+import { Component } from '@angular/core';
+// Import router directives
+// Deprecated
+// import { ROUTER_DIRECTIVES } from '@angular/router';
+
+import {OrderGetComponent} from "./order/order-get.component";
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Klanten</h1>
-  <ol>
-  <li *ngFor="let customer of customers">{{customer.code}} {{customer.name}} {{customer.adres}} {{customer.houseNum}} {{customer.zipCode}} {{customer.city}} {{customer.telNum}} {{customer.faxNum}}</li>
-  </ol>
-  <h1> Artikelen </h1>
-  <ol> 
-  <li *ngFor="let product of products">{{product.code}} {{product.name}} {{product.price}}</li>
-  </ol>
-  `
-  
+  styleUrls: ['../styles.css'],
+  templateUrl : `app.component.html`,
+  template: `
+      <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation with router directives-->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" [routerLink]="['/']">Home</a>
+            <a class="mdl-navigation__link" [routerLink]="['/order']">Bestelling</a>
+            <a class="mdl-navigation__link" [routerLink]="['/deliverylist']">Bezorglijst</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <!-- Router Outlet -->
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  `,
+  // Deprecated
+  // Tell component to use router directives
+  // directives: [ROUTER_DIRECTIVES]
 })
-export class AppComponent implements OnInit{ 
 
-  customers = [];
-  products = [];
-
-  constructor(private http: Http) {
-
-  }
-
-  ngOnInit() {
-    this.http.get("http://localhost:8080/snelTransport/resources/customers").
-    toPromise().then(r => r.json()).then(r => this.customers = r);
-
-    this.http.get("http://localhost:8080/snelTransport/resources/products").
-    toPromise().then(r => r.json()).then(r => this.products = r);
-  }
- }
+// App Component class
+export class AppComponent{}

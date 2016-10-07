@@ -9,27 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-require('rxjs/add/operator/toPromise');
 var AppComponent = (function () {
-    function AppComponent(http) {
-        this.http = http;
-        this.customers = [];
-        this.products = [];
+    function AppComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.http.get("http://localhost:8080/snelTransport/resources/customers").
-            toPromise().then(function (r) { return r.json(); }).then(function (r) { return _this.customers = r; });
-        this.http.get("http://localhost:8080/snelTransport/resources/products").
-            toPromise().then(function (r) { return r.json(); }).then(function (r) { return _this.products = r; });
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Klanten</h1>\n  <ol>\n  <li *ngFor=\"let customer of customers\">{{customer.code}} {{customer.name}} {{customer.adres}} {{customer.houseNum}} {{customer.zipCode}} {{customer.city}} {{customer.telNum}} {{customer.faxNum}}</li>\n  </ol>\n  <h1> Artikelen </h1>\n  <ol> \n  <li *ngFor=\"let product of products\">{{product.code}} {{product.name}} {{product.price}}</li>\n  </ol>\n  "
+            styleUrls: ['../styles.css'],
+            templateUrl: "app.component.html",
+            template: "\n      <div class=\"demo-layout-transparent mdl-layout mdl-js-layout\">\n      <header class=\"mdl-layout__header mdl-layout__header--transparent\">\n        <div class=\"mdl-layout__header-row\">\n          <!-- Add spacer, to align navigation to the right -->\n          <div class=\"mdl-layout-spacer\"></div>\n          <!-- Navigation with router directives-->\n          <nav class=\"mdl-navigation\">\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/']\">Home</a>\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/order']\">Bestelling</a>\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/deliverylist']\">Bezorglijst</a>\n          </nav>\n        </div>\n      </header>\n    </div>\n    <!-- Router Outlet -->\n    <div class=\"container\">\n      <router-outlet></router-outlet>\n    </div>\n  ",
         }), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());

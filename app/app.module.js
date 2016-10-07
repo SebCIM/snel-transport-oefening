@@ -10,15 +10,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
+var order_get_component_1 = require('./order/order-get.component');
+var order_create_component_1 = require('./order/order-create.component');
+var delivery_list_component_1 = require('./deliverylist/delivery-list.component');
+var contacts_component_1 = require('./contacts/contacts.component');
+var app_routes_1 = require('./app.routes');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent],
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                http_1.HttpModule,
+                http_1.JsonpModule,
+                app_routes_1.routing
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                order_get_component_1.OrderGetComponent,
+                order_create_component_1.OrderCreateComponent,
+                delivery_list_component_1.DeliveryListComponent,
+                contacts_component_1.ContactsComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
