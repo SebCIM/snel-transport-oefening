@@ -1,0 +1,30 @@
+<div id="main">
+    <div class="contentContainer">
+        <div class="clientContainer">
+            <div class="Column">
+                <div class="nameLabel">
+                </div>
+            </div>
+            <div class="Column">
+                <div class="productForm">
+                    <table class="fontSize">
+                        <tr>
+                            <th>Klant</th>
+                            <th>Truck</th>
+                            <th>Bestelnummer</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td><select class="customerSelect largeInput" #t (change)="getCustomerInfo(t.value)">
+            <option value="">Kies klant</option>
+            <option *ngFor="let customer of customers" value="{{customer.id}}">{{customer.name}}</option>
+        </select></td>
+                            <td>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>

@@ -8,6 +8,7 @@ import { OrderGetComponent }  from './order/order-get.component';
 import { OrderCreateComponent }  from './order/order-create.component';
 import { DeliveryListComponent }  from './deliverylist/delivery-list.component';
 import { ContactsComponent }  from './contacts/contacts.component';
+import { OrderListComponent } from './orderlist/order-list.component';
 // import { FiltersComponent }  from './filters/filters.component';
 import { routing } from './app.routes';
 
@@ -25,6 +26,7 @@ import { routing } from './app.routes';
     OrderCreateComponent,
     DeliveryListComponent,
     ContactsComponent,
+    OrderListComponent
     // FiltersComponent
   ],
   bootstrap: [ AppComponent ]
