@@ -8,7 +8,7 @@ var contacts_routes_1 = require('./contacts/contacts.routes');
 exports.routes = [
     {
         path: '',
-        redirectTo: '/order',
+        redirectTo: '/order/create',
         pathMatch: 'full'
     }
 ].concat(order_routes_1.orderRoutes, delivery_list_routes_1.deliveryRoutes, contacts_routes_1.contactsRoutes);

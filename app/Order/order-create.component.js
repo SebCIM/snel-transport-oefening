@@ -62,6 +62,7 @@ var OrderCreateComponent = (function () {
         this.orderTotal = total;
     };
     OrderCreateComponent.prototype.getCustomerInfo = function (customerId) {
+        console.log("product info func");
         this.customerId = parseInt(customerId) - 1;
         this.customerAddress = this.customers[this.customerId].adres;
         this.customerZipCode = this.customers[this.customerId].zipCode;

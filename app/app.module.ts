@@ -4,7 +4,6 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent }         from './app.component';
-import { OrderGetComponent }  from './order/order-get.component';
 import { OrderCreateComponent }  from './order/order-create.component';
 import { DeliveryListComponent }  from './deliverylist/delivery-list.component';
 import { ContactsComponent }  from './contacts/contacts.component';
@@ -21,7 +20,6 @@ import { routing } from './app.routes';
   ],
   declarations: [
     AppComponent,
-    OrderGetComponent,
     OrderCreateComponent,
     DeliveryListComponent,
     ContactsComponent,

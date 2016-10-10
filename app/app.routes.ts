@@ -13,7 +13,7 @@ import { contactsRoutes }    from './contacts/contacts.routes';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/order',
+    redirectTo: '/order/create',
     pathMatch: 'full'
   },
   ...orderRoutes,
