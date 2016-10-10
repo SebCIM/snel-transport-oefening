@@ -45,7 +45,7 @@ var OrderCreateComponent = (function () {
                 var orderline = new orderLineCreate_1.orderLineCreate(id, this.productName, this.productCat, this.productCode, this.productPrice, quantity, this.orderLineTotal);
                 this.orderlines.push(orderline);
                 this.orderTotal = this.orderTotal + this.orderLineTotal;
-                this.getProductInfo();
+                this.getProductInfo(null);
             }
         }
     };

@@ -80,7 +80,7 @@ export class OrderCreateComponent implements OnInit {
         this.orderlines.push(orderline);
         this.orderTotal = this.orderTotal + this.orderLineTotal;
 
-        this.getProductInfo();
+        this.getProductInfo(null);
       }
     }
   }
