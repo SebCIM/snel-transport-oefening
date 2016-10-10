@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 // Deprecated
 // import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import {OrderGetComponent} from "./order/order-get.component";
+import {OrderCreateComponent} from "./order/order-create.component";
 
 @Component({
   selector: 'my-app',
