@@ -8,7 +8,6 @@ import {OrderGetComponent} from "./order/order-get.component";
 @Component({
   selector: 'my-app',
   styleUrls: ['../styles.css'],
-  templateUrl : `app.component.html`,
   template: `
       <div class="demo-layout-transparent mdl-layout mdl-js-layout">
       <header class="mdl-layout__header mdl-layout__header--transparent">
@@ -19,7 +18,7 @@ import {OrderGetComponent} from "./order/order-get.component";
           <nav class="mdl-navigation">
             <a class="mdl-navigation__link" [routerLink]="['/']">Home</a>
             <a class="mdl-navigation__link" [routerLink]="['/order']">Bestelling</a>
-            <a class="mdl-navigation__link" [routerLink]="['/deliverylist']">Bezorglijst</a>
+            <a class="mdl-navigation__link" [routerLink]="['/orderlist']">Bezorgstatus</a>
           </nav>
         </div>
       </header>

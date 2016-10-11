@@ -14,15 +14,15 @@
                             <th>Bestelnummer</th>
                             <th>Status</th>
                         </tr>
-                        <tr>
-                            <td><select class="customerSelect largeInput" #t (change)="getCustomerInfo(t.value)">
-            <option value="">Kies klant</option>
-            <option *ngFor="let customer of customers" value="{{customer.id}}">{{customer.name}}</option>
-        </select></td>
+                        <tr *ngFor="let delivery of deliverylist">
+                            <td><input type = "text" value="{{delivery.customerName}}" /></td>
+                            <td>{{delivery.licensePlate}}</td>
+                            <td>{{delivery.orderNumber}}</td>
                             <td>
+                                <select class="customerSelect largeInput" name="singleSelect" #q (change)="statusChange(delivery.id, q)">
+                                    <option *ngFor="let status of statuses" value="{{status.id}}" [selected]="status.id == delivery.status">{{status.status}} </option>
+                                </select>
                             </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                     </table>
                 </div>

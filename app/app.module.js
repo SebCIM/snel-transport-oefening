@@ -15,11 +15,11 @@ var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var order_get_component_1 = require('./order/order-get.component');
 var order_create_component_1 = require('./order/order-create.component');
-var delivery_list_component_1 = require('./deliverylist/delivery-list.component');
 var contacts_component_1 = require('./contacts/contacts.component');
 var order_list_component_1 = require('./orderlist/order-list.component');
 // import { FiltersComponent }  from './filters/filters.component';
 var app_routes_1 = require('./app.routes');
+var angular2_notifications_1 = require('angular2-notifications');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,6 +27,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
+                angular2_notifications_1.SimpleNotificationsModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 http_1.JsonpModule,
@@ -36,7 +37,6 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 order_get_component_1.OrderGetComponent,
                 order_create_component_1.OrderCreateComponent,
-                delivery_list_component_1.DeliveryListComponent,
                 contacts_component_1.ContactsComponent,
                 order_list_component_1.OrderListComponent
             ],
