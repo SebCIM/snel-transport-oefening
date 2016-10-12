@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {orderLineCreate} from './orderLineCreate';
+import { Notification } from '../notifications/notifications.model';
+import { NotificationsService } from '../notifications/notifications.service';
 
 @Component({
   moduleId: module.id,
@@ -44,8 +46,10 @@ export class OrderCreateComponent implements OnInit {
   indexOfOrderLine: number;
   newOrderTotal = 0;
   orderlines: Array<orderLineCreate>;
-  constructor(private http: Http) {
+
+  constructor(private http: Http, private _notes: NotificationsService) {
     this.orderlines = [];
+    
   }
 
   addOrderLine(id, quantity: number) {
@@ -55,6 +59,7 @@ export class OrderCreateComponent implements OnInit {
       if (!isNaN(this.indexOfOrderLine)) {
 
         alert("Nee sorry!");
+        this._notes.add(new Notification("test", "test"));
         // var test = quantity.toString(quantity);
         // var test_2 = parseInt(test);
         // var testQuantity =  this.orderlines[this.indexOfOrderLine].getQuantity().toString(this.orderlines[this.indexOfOrderLine].getQuantity());

@@ -19,6 +19,7 @@ var delivery_list_component_1 = require('./deliverylist/delivery-list.component'
 var contacts_component_1 = require('./contacts/contacts.component');
 // import { FiltersComponent }  from './filters/filters.component';
 var app_routes_1 = require('./app.routes');
+var notifications_service_1 = require('./notifications/notifications.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,7 +39,7 @@ var AppModule = (function () {
                 delivery_list_component_1.DeliveryListComponent,
                 contacts_component_1.ContactsComponent,
             ],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent, notifications_service_1.NotificationsService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

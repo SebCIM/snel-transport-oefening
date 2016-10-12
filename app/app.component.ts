@@ -31,7 +31,6 @@ import {OrderGetComponent} from "./order/order-get.component";
   `,
   // Deprecated
   // Tell component to use router directives
-  // directives: [ROUTER_DIRECTIVES]
 })
 
 // App Component class

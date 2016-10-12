@@ -10,13 +10,14 @@ import { DeliveryListComponent }  from './deliverylist/delivery-list.component';
 import { ContactsComponent }  from './contacts/contacts.component';
 // import { FiltersComponent }  from './filters/filters.component';
 import { routing } from './app.routes';
+import { NotificationsService } from './notifications/notifications.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-     HttpModule,
-    JsonpModule,
+    HttpModule,
+    JsonpModule,  
     routing
   ],
   declarations: [
@@ -27,7 +28,7 @@ import { routing } from './app.routes';
     ContactsComponent,
     // FiltersComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent, NotificationsService]
 })
 export class AppModule {
 }

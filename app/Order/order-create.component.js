@@ -13,9 +13,12 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var orderLineCreate_1 = require('./orderLineCreate');
+var notifications_model_1 = require('../notifications/notifications.model');
+var notifications_service_1 = require('../notifications/notifications.service');
 var OrderCreateComponent = (function () {
-    function OrderCreateComponent(http) {
+    function OrderCreateComponent(http, _notes) {
         this.http = http;
+        this._notes = _notes;
         this.customers = [];
         this.products = [];
         this.selectedProducts = [];
@@ -35,6 +38,7 @@ var OrderCreateComponent = (function () {
             this.indexOfOrderLine = this.getIndexByValue("Id", id);
             if (!isNaN(this.indexOfOrderLine)) {
                 alert("Nee sorry!");
+                this._notes.add(new notifications_model_1.Notification("test", "test"));
             }
             else {
                 this.productName = this.products[this.productSelectId].name;
@@ -133,7 +137,7 @@ var OrderCreateComponent = (function () {
             // templateUrl : `order-create.component.html`
             templateUrl: "./order-create.component.html"
         }), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, notifications_service_1.NotificationsService])
     ], OrderCreateComponent);
     return OrderCreateComponent;
 }());
