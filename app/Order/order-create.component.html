@@ -5,10 +5,10 @@
         <div class="nameLabel">
           <label>Klant</label>
         </div>
-        <select class="customerSelect largeInput" #t (change)="getCustomerInfo(t.value)">
-            <option value="">Kies klant</option>
-            <option *ngFor="let customer of customers" value="{{customer.id}}">{{customer.name}}</option>
-        </select>
+        <input list=customers name="term" class="customerSelect largeInput" placeholder="Kies klant" #t (change)="getCustomerInfo(t.value)" [(ngModel)]="term">
+        <datalist id=customers>
+          <option *ngFor="let customer of customers | filter:term" id="{{customer.id}}" >{{customer.name}}, {{customer.id}}</option>
+        </datalist>
       </div>
       <div class="Column">
         <div class="nameLabel">

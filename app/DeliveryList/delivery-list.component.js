@@ -15,6 +15,8 @@ require('rxjs/add/operator/toPromise');
 var DeliveryListComponent = (function () {
     function DeliveryListComponent(http) {
         this.http = http;
+        this.todos = ['Angular Notification', 'Filter', 'Request API'];
+        this.todos;
     }
     DeliveryListComponent = __decorate([
         core_1.Component({

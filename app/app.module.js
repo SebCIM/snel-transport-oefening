@@ -20,6 +20,8 @@ var order_list_component_1 = require('./orderlist/order-list.component');
 // import { FiltersComponent }  from './filters/filters.component';
 var app_routes_1 = require('./app.routes');
 var angular2_notifications_1 = require('angular2-notifications');
+var delivery_list_component_1 = require('./deliverylist/delivery-list.component');
+var filter_pipe_1 = require('./filter.pipe');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,7 +40,9 @@ var AppModule = (function () {
                 order_get_component_1.OrderGetComponent,
                 order_create_component_1.OrderCreateComponent,
                 contacts_component_1.ContactsComponent,
-                order_list_component_1.OrderListComponent
+                order_list_component_1.OrderListComponent,
+                delivery_list_component_1.DeliveryListComponent,
+                filter_pipe_1.FilterPipe
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

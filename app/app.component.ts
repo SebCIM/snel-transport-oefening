@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+ import { Component } from '@angular/core';
+
 // Import router directives
 // Deprecated
 // import { ROUTER_DIRECTIVES } from '@angular/router';
@@ -18,7 +19,7 @@ import {OrderGetComponent} from "./order/order-get.component";
           <nav class="mdl-navigation">
             <a class="mdl-navigation__link" [routerLink]="['/']">Home</a>
             <a class="mdl-navigation__link" [routerLink]="['/order']">Bestelling</a>
-            <a class="mdl-navigation__link" [routerLink]="['/orderlist']">Bezorgstatus</a>
+            <a class="mdl-navigation__link" [routerLink]="['/orderlist']">Leveringsstatus</a>
           </nav>
         </div>
       </header>

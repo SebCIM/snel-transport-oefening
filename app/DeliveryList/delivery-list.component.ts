@@ -12,9 +12,11 @@ import 'rxjs/add/operator/toPromise';
 
 // Component class implementing OnInit
 export class DeliveryListComponent{
+  
+  private todos = ['Angular Notification', 'Filter', 'Request API'];
 
   constructor(private http: Http) {
-
+    this.todos
   }
 
 }
